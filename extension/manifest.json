@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "Android SDK Samples Search",
-  "description": "Adds a 'sample code' link for class references at developer.android.com",
-  "homepage_url": "https://github.com/jgilfelt/android-sdk-samples-search",
+  "name": "Android SDK Samples Search and Top Questions",
+  "description": "Adds a 'sample code' link and 'Top Questions' link  for class references at developer.android.com",
+  "homepage_url": "https://github.com/uditmukherjee457/android-sdk-sampleSearch-and-TopQuestions",
   "content_security_policy": "script-src 'self' https://developer.android.com; object-src 'self'",
-  "version": "0.1.2",
+  "version": "1.0",
   "permissions": [
     "tabs",
     "*://developer.android.com/*"
