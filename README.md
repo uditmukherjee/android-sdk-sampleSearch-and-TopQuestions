@@ -1,22 +1,17 @@
-Android SDK Samples Search
+Android SDK Samples Search and Top Questions
 ==========================
 
-A simple Google Chrome Extension which adds a 'sample code' link to Android API class reference pages to help you find relevant code examples within the official Android SDK sample code projects.
-
-Uses GitHub search and the AOSP platform_development package mirror hosted there.
-
-<a href="https://chrome.google.com/webstore/detail/android-sdk-samples-searc/mbiobcenjhldinmnbpjihaemkfofnmgf"><img src="https://raw.github.com/jgilfelt/android-resource-navigator/master/screenshots/chrome-store-badge.png"/></a>
+A simple Google Chrome Extension which adds a 'sample code' link to Android API class reference pages to help you find relevant code examples within the official Android SDK sample code projects, and adds a link to the questions frequently asked in StackOverflow which will help you to get answers to questions which you are likely to come across as you dive into Android Development
 
 Credits
 -------
-
-Author: [Jeff Gilfelt](https://github.com/jgilfelt).
-
-Original [Android SDK Reference Search](http://code.google.com/p/romannurik-code/source/browse/chrome-extensions/android-sdk-reference-search) extension by Roman Nurik.
+Author: [Udit Mukherjee] (https://github.com/uditmukherjee457)
+Author of Android SDK Samples Search: [Jeff Gilfelt](https://github.com/jgilfelt/android-sdk-samples-search).
+Original [Android SDK Reference Search](https://github.com/romannurik/AndroidSDKSearchExtension).
 
 License
 -------
-
+    Copyright 2014 Udit Mukherjee
     Copyright 2013 readyState Software Limited
     Copyright 2012 Google Inc.
 
