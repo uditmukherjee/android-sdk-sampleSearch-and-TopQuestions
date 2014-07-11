@@ -20,40 +20,51 @@ var _CLASS_DOC_URL_REGEX = /http(?:s)?:\/\/d(?:eveloper)?.android.com\/reference
 
 var _GITHUB_SAMPLES_SEARCH_TEMPLATE = 'https://github.com/search?q=$QUERY+repo%3Aandroid%2Fplatform_development+repo%3Acommonsguy%2Fcw-omnibus+extension%3Ajava&type=Code';
 
+var _STACKOVERFLOW_TOP_QUESTIONS = "http://stackoverflow.com/search?tab=votes&q=%5bandroid%5d%20%5b$QUERY%5d%20OR%20$QUERY%20";
+
 (function() {
-  var url = window.location.href;
-  var appendContent;
+    var url = window.location.href;
+    var appendContentSampleCode;
+    var appendContentQuestions;
 
-  var m;
-  if (m = url.match(_PACKAGE_DOC_URL_REGEX)) {
+    var m;
+    if (m = url.match(_PACKAGE_DOC_URL_REGEX)) {
   	// nothing
-  } else if (m = url.match(_CLASS_DOC_URL_REGEX)) {
-    var nameSlash = m[1];
-    var outerNameSlash = nameSlash.replace(/\..*$/, ''); // trim inner classes
-    var fullClass = nameSlash.match(/[A-Z]+.*$/);
-    var outerNameDot = outerNameSlash.replace(/\//g, '.');
-    var nameDot = nameSlash.replace(/\//g, '.');
-    
-    // use qualified outer class and full class name for inner classes
-    var q = (nameDot != outerNameDot) ? outerNameDot + '+' + fullClass : nameDot;
+    } else if (m = url.match(_CLASS_DOC_URL_REGEX)) {
+	var nameSlash = m[1];
+	var outerNameSlash = nameSlash.replace(/\..*$/, ''); // trim inner classes
+	var fullClass = nameSlash.match(/[A-Z]+.*$/);
+	var outerNameDot = outerNameSlash.replace(/\//g, '.');
+	var nameDot = nameSlash.replace(/\//g, '.');
+	
+	// use qualified outer class and full class name for inner classes
+	var q = (nameDot != outerNameDot) ? outerNameDot + '+' + fullClass : nameDot;
 
-    appendContent = [
-        ' (<a href="',
-        _GITHUB_SAMPLES_SEARCH_TEMPLATE
-            .replace(/\$QUERY/g, q),
-        '">sample code</a>)'
-    ].join('');
+	appendContentSampleCode = [
+            ' (<a href="',
+            _GITHUB_SAMPLES_SEARCH_TEMPLATE
+		.replace(/\$QUERY/g, q),
+            '">sample code</a>)'
+	].join('');
 
-  }
+	var itemQuery = document.getElementById('jd-header').getElementsByTagName("h1")[0].textContent;
+	appendContentQuestions = [
+            ' (<a href="',
+            _STACKOVERFLOW_TOP_QUESTIONS
+                .replace(/\$QUERY/g, itemQuery),
+            '">Top Questions</a>)'
+        ].join('');
 
-  if (appendContent) {
-    var appendNode = document.createElement('span');
-    appendNode.innerHTML = appendContent;
+    }
 
-    document
-        .getElementById('jd-header')
-        .getElementsByTagName('h1')[0]
-        .appendChild(appendNode);
-  }
+    if (appendContentQuestions || appendContentSampleCode ) {
+	var appendNode = document.createElement('span');
+	appendNode.innerHTML = appendContentSampleCode + appendContentQuestions;
+
+	document
+            .getElementById('jd-header')
+            .getElementsByTagName('h1')[0]
+            .appendChild(appendNode);
+    }
 
 })();
