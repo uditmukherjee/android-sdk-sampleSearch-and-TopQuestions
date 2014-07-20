@@ -48,14 +48,22 @@ var _STACKOVERFLOW_TOP_QUESTIONS = "http://stackoverflow.com/search?tab=votes&q=
             '">sample code</a>)'
 	].join('');
 
-	var itemQuery = document.getElementById('jd-header').getElementsByTagName("h1")[0].textContent;
+	// var itemQuery = document.getElementById('jd-header').getElementsByTagName("h1")[0].textContent;
+	// appendContentQuestions = [
+        //     ' (<a href="',
+        //     _STACKOVERFLOW_TOP_QUESTIONS
+        //         .replace(/\$QUERY/g, itemQuery),
+        //     '">Top Questions</a>)'
+        // ].join('');
+
+	var itemQuery = q.split('.');
+	var name = itemQuery[itemQuery.length - 1];
 	appendContentQuestions = [
             ' (<a href="',
             _STACKOVERFLOW_TOP_QUESTIONS
-                .replace(/\$QUERY/g, itemQuery),
+                .replace(/\$QUERY/g, name),
             '">Top Questions</a>)'
         ].join('');
-
     }
 
     if (appendContentQuestions || appendContentSampleCode ) {
