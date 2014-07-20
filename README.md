@@ -5,9 +5,9 @@ A simple Google Chrome Extension which adds a 'sample code' link to Android API 
 
 Credits
 -------
-Author: [Udit Mukherjee] (https://github.com/uditmukherjee457)
-Author of Android SDK Samples Search: [Jeff Gilfelt](https://github.com/jgilfelt/android-sdk-samples-search).
-Original [Android SDK Reference Search](https://github.com/romannurik/AndroidSDKSearchExtension).
+Author: [Udit Mukherjee] (https://github.com/uditmukherjee457)<br>
+Author of [Android SDK Samples Search] (https://github.com/jgilfelt/android-sdk-samples-search): [Jeff Gilfelt](https://github.com/jgilfelt/android-sdk-samples-search).<br>
+Original [Android SDK Reference Search](https://github.com/romannurik/AndroidSDKSearchExtension) : [Roman Nurik] (https://github.com/romannurik).
 
 License
 -------
